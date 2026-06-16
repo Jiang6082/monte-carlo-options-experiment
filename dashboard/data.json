@@ -1,0 +1,232 @@
+{
+  "summary": {
+    "paths": 500000,
+    "callPrice": 9.414024,
+    "callBenchmark": 9.413403,
+    "callAbsError": 0.00062,
+    "antitheticReduction": 44.292597,
+    "controlVariateReduction": 83.141813,
+    "coverage": 85,
+    "tests": 43
+  },
+  "validation": [
+    {
+      "metric": "European call MC",
+      "value": 9.414024,
+      "benchmark": 9.413403
+    },
+    {
+      "metric": "European put MC",
+      "value": 6.46493,
+      "benchmark": 6.457957
+    }
+  ],
+  "validationSummary": [
+    {
+      "metric": "total_cases",
+      "value": 2.0
+    },
+    {
+      "metric": "ci_coverage",
+      "value": 1.0
+    },
+    {
+      "metric": "mean_abs_error",
+      "value": 0.003797
+    },
+    {
+      "metric": "max_abs_error",
+      "value": 0.006974
+    },
+    {
+      "metric": "median_rel_error_pct",
+      "value": 0.0573
+    }
+  ],
+  "convergence": [
+    {
+      "num_paths": 1000,
+      "price": 8.881144,
+      "bs_price": 9.413403,
+      "abs_error": 0.532259,
+      "standard_error": 0.42928,
+      "ci_width": 1.682778,
+      "runtime_seconds": 0.000168
+    },
+    {
+      "num_paths": 5000,
+      "price": 9.13339,
+      "bs_price": 9.413403,
+      "abs_error": 0.280013,
+      "standard_error": 0.197388,
+      "ci_width": 0.773761,
+      "runtime_seconds": 0.000196
+    },
+    {
+      "num_paths": 10000,
+      "price": 9.313033,
+      "bs_price": 9.413403,
+      "abs_error": 0.10037,
+      "standard_error": 0.141626,
+      "ci_width": 0.555175,
+      "runtime_seconds": 0.00026
+    },
+    {
+      "num_paths": 50000,
+      "price": 9.421739,
+      "bs_price": 9.413403,
+      "abs_error": 0.008335,
+      "standard_error": 0.06343,
+      "ci_width": 0.248644,
+      "runtime_seconds": 0.001047
+    },
+    {
+      "num_paths": 100000,
+      "price": 9.387501,
+      "bs_price": 9.413403,
+      "abs_error": 0.025903,
+      "standard_error": 0.044852,
+      "ci_width": 0.175818,
+      "runtime_seconds": 0.002512
+    },
+    {
+      "num_paths": 500000,
+      "price": 9.414024,
+      "bs_price": 9.413403,
+      "abs_error": 0.00062,
+      "standard_error": 0.019996,
+      "ci_width": 0.078383,
+      "runtime_seconds": 0.018361
+    }
+  ],
+  "varianceReduction": [
+    {
+      "method": "standard",
+      "price": 9.414024,
+      "standard_error": 0.019996,
+      "estimator_variance": 0.0004,
+      "variance_reduction_pct": 0.0
+    },
+    {
+      "method": "antithetic",
+      "price": 9.418259,
+      "standard_error": 0.014924,
+      "estimator_variance": 0.000223,
+      "variance_reduction_pct": 44.292597
+    },
+    {
+      "method": "moment_matching",
+      "price": 9.411992,
+      "standard_error": 0.019984,
+      "estimator_variance": 0.000399,
+      "variance_reduction_pct": 0.122448
+    },
+    {
+      "method": "sobol",
+      "price": 9.413402,
+      "standard_error": 0.019956,
+      "estimator_variance": 0.000398,
+      "variance_reduction_pct": 0.40153
+    },
+    {
+      "method": "control_variate",
+      "price": 9.418073,
+      "standard_error": 0.00821,
+      "estimator_variance": 6.7e-05,
+      "variance_reduction_pct": 83.141813
+    }
+  ],
+  "asian": [
+    {
+      "sigma": 0.2,
+      "maturity": 1.0,
+      "monitoring_steps": 12,
+      "european_call": 9.421739,
+      "asian_call": 5.631835,
+      "geometric_asian_call": 5.435333,
+      "asian_discount_pct": 40.225098
+    },
+    {
+      "sigma": 0.2,
+      "maturity": 1.0,
+      "monitoring_steps": 52,
+      "european_call": 9.421739,
+      "asian_call": 5.351171,
+      "geometric_asian_call": 5.166873,
+      "asian_discount_pct": 43.203992
+    },
+    {
+      "sigma": 0.2,
+      "maturity": 1.0,
+      "monitoring_steps": 252,
+      "european_call": 9.421739,
+      "asian_call": 5.293007,
+      "geometric_asian_call": 5.103063,
+      "asian_discount_pct": 43.821329
+    }
+  ],
+  "greeks": [
+    {
+      "greek": "delta",
+      "method": "finite_difference",
+      "monte_carlo_fd": 0.59841,
+      "black_scholes": 0.598706,
+      "abs_error": 0.000296
+    },
+    {
+      "greek": "delta",
+      "method": "pathwise",
+      "monte_carlo_fd": 0.598649,
+      "black_scholes": 0.598706,
+      "abs_error": 5.7e-05
+    },
+    {
+      "greek": "gamma",
+      "method": "finite_difference",
+      "monte_carlo_fd": 0.019453,
+      "black_scholes": 0.019333,
+      "abs_error": 0.000119
+    },
+    {
+      "greek": "vega",
+      "method": "finite_difference",
+      "monte_carlo_fd": 38.711259,
+      "black_scholes": 38.666812,
+      "abs_error": 0.044447
+    }
+  ],
+  "extensions": [
+    {
+      "feature": "digital_call",
+      "value": 0.503884
+    },
+    {
+      "feature": "up_and_out_call",
+      "value": 3.430365
+    },
+    {
+      "feature": "continuous_up_and_out_call_benchmark",
+      "value": 3.20275
+    },
+    {
+      "feature": "sobol_brownian_bridge_call",
+      "value": 9.413459
+    },
+    {
+      "feature": "implied_volatility_recovered",
+      "value": 0.2
+    },
+    {
+      "feature": "american_put_lsm",
+      "value": 6.676507
+    },
+    {
+      "feature": "heston_mean_terminal_price",
+      "value": 103.028807
+    },
+    {
+      "feature": "heston_mean_terminal_variance",
+      "value": 0.040178
+    }
+  ]
+}

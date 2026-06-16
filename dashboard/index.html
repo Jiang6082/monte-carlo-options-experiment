@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monte Carlo Options Pricing Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Quantitative finance dashboard</p>
+        <h1>Monte Carlo Options Pricing Engine</h1>
+      </div>
+      <div class="status-row">
+        <span>43 tests</span>
+        <span>85% coverage</span>
+        <span>500,000 paths</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-grid" id="summary"></section>
+
+      <section class="panel split">
+        <div>
+          <h2>European Validation</h2>
+          <div id="validation-chart" class="chart"></div>
+        </div>
+        <div>
+          <h2>Convergence</h2>
+          <div id="convergence-chart" class="chart"></div>
+        </div>
+      </section>
+
+      <section class="panel split">
+        <div>
+          <h2>Variance Reduction</h2>
+          <div id="variance-chart" class="chart"></div>
+        </div>
+        <div>
+          <h2>Asian Monitoring</h2>
+          <div id="asian-chart" class="chart"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Browser Pricing Lab</h2>
+        <div class="lab-grid">
+          <label>Spot <input id="spot" type="range" min="60" max="140" value="100" /></label>
+          <label>Strike <input id="strike" type="range" min="60" max="140" value="100" /></label>
+          <label>Volatility <input id="vol" type="range" min="5" max="80" value="20" /></label>
+          <label>Maturity <input id="maturity" type="range" min="1" max="36" value="12" /></label>
+        </div>
+        <div class="lab-output">
+          <div>
+            <span class="metric-label">Black-Scholes call</span>
+            <strong id="lab-bs">0.0000</strong>
+          </div>
+          <div>
+            <span class="metric-label">10k-path browser MC</span>
+            <strong id="lab-mc">0.0000</strong>
+          </div>
+          <div>
+            <span class="metric-label">Absolute error</span>
+            <strong id="lab-error">0.0000</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel split">
+        <div>
+          <h2>Greeks</h2>
+          <div id="greeks-table" class="data-table"></div>
+        </div>
+        <div>
+          <h2>Advanced Models</h2>
+          <div id="extensions-table" class="data-table"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

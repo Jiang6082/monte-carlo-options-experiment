@@ -1,0 +1,16 @@
+site_name: Monte Carlo Options Pricing Engine
+theme:
+  name: mkdocs
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: false
+nav:
+  - Home: index.md
+  - Methodology: methodology.md
+  - Examples: examples.md
+  - API: api.md
+  - Results: results.md

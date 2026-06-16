@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "monte-carlo-options-pricing-engine"
+version = "0.1.0"
+description = "Vectorized Monte Carlo engine for pricing European and Asian options under geometric Brownian motion."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Quant Finance Project" }]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "matplotlib>=3.8",
+]
+
+[project.scripts]
+mc-options = "mc_options.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=5.0",
+    "jupyter>=1.0",
+    "ipykernel>=6.25",
+    "ruff>=0.5",
+    "mypy>=1.10",
+    "nbconvert>=7.0",
+    "pre-commit>=3.7",
+    "mkdocs>=1.6",
+    "mkdocstrings[python]>=0.26",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --cov=mc_options --cov-report=term-missing --cov-report=xml"
+
+[tool.coverage.run]
+source = ["mc_options"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+packages = ["mc_options"]
+ignore_missing_imports = true
+strict = false
+warn_unused_ignores = true
