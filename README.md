@@ -2,10 +2,11 @@
 
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Tests](https://img.shields.io/badge/tests-43%20passing-brightgreen)
-![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)
+[![Tests](https://github.com/Jiang6082/monte-carlo-options-experiment/actions/workflows/tests.yml/badge.svg)](https://github.com/Jiang6082/monte-carlo-options-experiment/actions/workflows/tests.yml)
 
-A polished quantitative finance project for pricing European, Asian, digital, barrier, and American-style options. The importable package is `mc_options`; it includes vectorized simulation, Black-Scholes validation, uncertainty estimates, variance reduction, analytical benchmarks, Greeks, implied volatility, Heston stochastic-volatility paths, executed notebooks, static figures, examples, a CLI, and CI-ready tooling.
+A Python numerical-methods project for pricing European, Asian, digital, barrier, and American-style options. The importable package is `mc_options`; it includes vectorized simulation, Black-Scholes validation, uncertainty estimates, variance reduction, analytical benchmarks, Greeks, implied volatility, Heston stochastic-volatility paths, executed notebooks, static figures, examples, a CLI, and CI-ready tooling.
+
+[Interactive pricing dashboard](https://jiang6082.github.io/monte-carlo-options-experiment/) · [Portfolio](https://jiang6082.github.io/)
 
 ## What This Demonstrates
 
@@ -62,7 +63,7 @@ python -m pytest
 python -m mkdocs build --strict
 ```
 
-Verified locally:
+Recorded local verification from the original project documentation (not rerun for the September 2026 profile review):
 
 - `ruff`: all checks passed
 - `ruff format --check`: passed
